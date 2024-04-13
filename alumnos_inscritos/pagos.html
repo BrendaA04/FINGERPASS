@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Pago</title>
+    <link rel="stylesheet" href="stylei.css">
+    <link rel="stylesheet" href="../administrador/st.css">
+    <script>
+        
+        
+        function autocompletarMonto() {
+            var conceptoPago = document.getElementById("referencias").value;
+            var monto;
+            
+            switch (conceptoPago) {
+                case "libro":
+                    monto = "100.00";
+                    break;
+                case "reinscripcion":
+                    monto = "200.00";
+                    break;
+                case "otro":
+                    monto = "0.00";
+                    break;
+                default:
+                    monto = "";
+                    break;
+            }
+            
+            document.getElementById("monto").value = monto;
+        }
+        
+        function redirigirPagina() {
+            var referencia = document.getElementById("referencia").value;
+            var monto = document.getElementById("monto").value;
+            var url = "opps_es.html?referencia=" + encodeURIComponent(referencia) + "&monto=" + encodeURIComponent(monto);
+            window.location.href = url;
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Pago</h1>
+    
+    <form action="#" method="post" onsubmit="return redirigirPagina()">
+        <h2>Información del Cliente</h2>
+        <label for="referencias">concepto de Pago:</label>
+        <select id="referencias" name="referencias" required onchange="autocompletarMonto()">
+        
+            <option value="">Seleccione</option>
+            <option value="libro">Libro de Inglés</option>
+            <option value="reinscripcion">Reinscripción</option>
+            <option value="otro">Otro</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <label for="referencia">Matricula:</label>
+        <input type="text" id="referencia" name="referencia" required maxlength="10">
+        
+        
+        <h2>Formas de Pago</h2>
+        
+        
+        <input type="radio" id="pdf" name="metodo_pago" value="pdf" required >
+        <label for="pdf">Generar Referencia de Pago en OXXO</label><br>
+        
+        
+        
+        <h2>Detalles del Pago</h2>
+        <label for="monto">Monto a Pagar:</label>
+        <input type="number" id="monto" name="monto" readonly required><br>
+        
+        <button type="submit">Realizar Pago</button>
+    </form>
+
+    
+    
+</body>
+</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registros de Ubicación de Visitantes</title>
+<style>
+  body {
+    background-color: #83B5F1; /* Azul más oscuro */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    color: #333; /* Color de texto oscuro */
+    text-align: center; /* Centra el título */
+    margin-top: 20px; /* Agrega espacio superior */
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #333; /* Borde de las celdas */
+    padding: 8px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #0056b3; /* Azul más oscuro */
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #a5c7f3; /* Fondo más claro para filas pares */
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .button-container button {
+    background-color: #0056b3; /* Azul más oscuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .button-container button:hover {
+    background-color: #003d80; /* Azul aún más oscuro al pasar el ratón */
+  }
+</style>
+</head>
+<body>
+
+<h2>Registros de Ubicación de Visitantes</h2>
+
+<div class="button-container">
+  <button onclick="window.location.href = 'formulario_visitantes.html'">Regresar al formulario</button>
+
+</div>
+
+<div class="button-container">
+  <button onclick="mostrarFormularioBuscar()">Buscar Visitante por ID</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre(s)</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Hora de Entrada</th>
+      <th>Motivo de Visita</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="tablaRegistros">
+    <!-- Aquí se mostrarán los registros -->
+  </tbody>
+</table>
+
+<script>
+  // Simulación de datos de registros de ubicación de visitantes
+  var registros = [
+    { nombre: "Juan", apellidoPaterno: "Islas", apellidoMaterno: "Cruz", horaEntrada: "12:19", motivoVisita: "Reunion", fecha: "18/02/04", idDispositivo: 12345, ubicacion: "40.7128, -74.0060" },
+    { nombre: "Pablo", apellidoPaterno: "Lira", apellidoMaterno: "Muños", horaEntrada: "14:30", motivoVisita: "Jardineria", fecha: "11/06/02", idDispositivo: 67890, ubicacion: "41.8781, -87.6298" }
+    // Agrega más registros según sea necesario
+  ];
+
+  // Función para mostrar los registros en la tabla
+  function mostrarRegistros() {
+    var tablaRegistros = document.getElementById('tablaRegistros');
+    tablaRegistros.innerHTML = ''; // Limpiar la tabla antes de agregar nuevos registros
+
+    registros.forEach(function(registro) {
+      var fila = document.createElement('tr');
+      fila.innerHTML = `
+        <td>${registro.nombre}</td>
+        <td>${registro.apellidoPaterno}</td>
+        <td>${registro.apellidoMaterno}</td>
+        <td>${registro.horaEntrada}</td>
+        <td>${registro.motivoVisita}</td>
+        <td>${registro.fecha}</td>
+        <td><button onclick="verUbicacion(${registro.idDispositivo}, '${registro.ubicacion}')">Ver</button></td>
+      `;
+      tablaRegistros.appendChild(fila);
+    });
+  }
+
+  // Función para mostrar el formulario para agregar un nuevo visitante
+  function mostrarFormularioNuevoVisitante() {
+    // Aquí puedes redirigir al usuario al formulario para agregar un nuevo visitante
+    alert("Función aún no implementada.");
+  }
+
+  // Función para mostrar el formulario para buscar un visitante por ID
+  function mostrarFormularioBuscar() {
+    // Aquí puedes redirigir al usuario al formulario para buscar un visitante por ID
+    alert("Función aún no implementada.");
+  }
+
+  // Función para ver la ubicación del visitante en el mapa
+  function verUbicacion(idDispositivo, ubicacion) {
+    // Redirige al usuario a la página "ubicacion_visitante.html"
+    window.location.href = "ubicacion_visitante.html";
+  }
+
+  // Mostrar los registros al cargar la página
+  mostrarRegistros();
+</script>
+
+</body>
+</html>

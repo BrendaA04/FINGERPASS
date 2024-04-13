@@ -1,0 +1,97 @@
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    min-height: 100vh;
+    background: #182f53;
+    background: ( #182f53);
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-header {
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.site-header nav {
+    line-height: 30px;
+}
+
+.site-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.site-header nav ul li {
+    margin-right: 10px;
+}
+
+/* Estilos del botón */
+.button {
+    position: relative;
+    width: 210px;
+    height: 80px;
+    background-color: #3FABAF;
+    display: flex;
+    align-items: center;
+    color: rgb(7, 7, 7);
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 400px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+
+.button:hover::after {
+    filter: blur(30px);
+}
+
+.button:hover::before {
+    transform: rotate(-180deg);
+}
+
+.button:active::before {
+    scale: 0.7;
+}
+
+/* Estilos para enlaces */
+.site-header nav ul li a {
+    display: flex;
+    color: #000000;
+    text-decoration: none;
+    padding: 20px 25px;
+    border-radius: 90px;
+    border: 0.5px solid #0000002a;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 500ms ease;
+    background-color: #73da73;
+}
+
+.site-header nav ul li a:hover {
+    background-color: #6add73;
+    color: #111111;
+}
+
