@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="stylei.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      <title>Registro</title>
+
+  
+     <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Estilos del formulario */
+        .formulario {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            display: none;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+
+  </style>
+
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div id="desk">
+        <div class="site-identity"></div>
+        <nav>
+          
+        </nav>
+      </div>
+
+      <div class="center">
+        <a href="index.html"><img src="sinfondo2.gif" alt="Site Name" width="auto" height="auto"/></a>
+      <form>
+      <label for="opcion">Selecciona una opción:</label>
+      <select id="opcion" onchange="mostrarFormulario()">
+      <option value="">Seleccionar</option>
+      <option value="formulario1">padre de familia</option>
+      <option value="formulario2">Administrador</option>
+      <option value="formulario3">docente</option>
+      </select>
+      </form>
+  </div>
+
+    </header>
+    
+
+      <div id="formulario1" class="formulario">
+          
+
+      <h1 align="center" style="color: black;">Registro de Padre de Familia Escolar</h1>
+      <form>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required><br>
+
+          <label for="apellidos">primer_apellido:</label>
+          <input type="text" id="1apellidos2" name="apellidos" required><br>
+          <label for="apellidos">segundo_apellido:</label>
+          <input type="text" id="apellidos2" name="apellidos" required><br>
+
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required><br>
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required><br>
+         
+          <label for="opcion">estado civil</label>
+          <select id="opcion" onchange="mostrarFormulario()">
+          <option >estado civil</option>
+          <option >soltero</option>
+          <option >casado</option>
+          <option>otro</option>
+          </select>
+          <label for="contrasena">contraseña:</label>
+          <input type="contrasena" id="contrasena" name="contrasena">
+          <input type="submit" value="Registrar" id="registro_padre" >
+      </form>
+
+
+      </div>
+
+      <div id="formulario2" class="formulario">
+          <h2>Formulario 2</h2>
+
+      </div>
+
+      <div id="formulario3" class="formulario">
+          <h1 align="center" style="color: black;">Registro del Docente</h1>
+         <form>
+          <div class="contact_form">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required><br>
+
+              <label for="apellidos">primer_apellido:</label>
+              <input type="text" id="1apellidos2" name="apellidos" required><br>
+              <label for="apellidos">segundo_apellido:</label>
+              <input type="text" id="apellidos2" name="apellidos" required><br>
+
+              <label for="correo">Especialidad:</label>
+              <input type="email" id="correo" name="correo" required><br>
+
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required><br>
+
+              
+              <label for="opcion">estado civil</label>
+              <select id="opcion" onchange="mostrarFormulario()">
+              <option >estado civil</option>
+              <option >soltero</option>
+              <option >casado</option>
+              <option>otro</option>
+              </select>
+              <br>
+
+              <label for="contrasena">contraseña:</label>
+              <input type="contrasena" id="contrasena" name="contrasena">
+
+
+
+              <input type="submit" value="Registrar" id="registro_padre" >
+          </form>
+        </div>
+      </div>
+
+    </div>
+    
+    <script>
+        function mostrarFormulario() {
+        var opcionSeleccionada = document.getElementById("opcion").value;
+        var formularios = document.getElementsByClassName("formulario");
+        for (var i = 0; i < formularios.length; i++) {
+            formularios[i].style.display = "none";
+        }
+        
+        var formularioSeleccionado = document.getElementById(opcionSeleccionada);
+        if (formularioSeleccionado) {
+            formularioSeleccionado.style.display = "block";
+        }
+        }
+    </script>
+  </body>
+
+
+</html>

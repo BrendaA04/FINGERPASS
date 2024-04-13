@@ -1,0 +1,34 @@
+.body {
+    background-color: #182f51;
+    color: white; /* Color de letra */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white; /* Color de letra de la tabla */
+}
+
+.th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.th {
+    background-color: #3FABAF;
+    color: black; /* Color de letra de las cabeceras */
+}
+
+.button {
+    background-color: #ddd; /* Color de fondo del botón */
+    color: black; /* Color de letra del botón */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #2E7B7F; /* Color de fondo del botón al pasar el mouse */
+}
